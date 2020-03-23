@@ -9,7 +9,18 @@ let Cat = function (name, weight, speed) {
 
     this.chasing = function (rat) {
         if (this.speed > rat.speed){
-            console.log(this.name + " bắt được chuột " + rat.name)
+            console.log(this.name + " bắt được chuột " + rat.name);
+            rat.status = false;
+        }
+        else {
+            console.log(this.name + " không bắt được chuột " + rat.name)
+        }
+    }
+
+    this.eatRat = function (rat) {
+        if (!rat.status){
+            this.weight += rat.weight;
+            console.log("Chuot bị chén");
         }
     }
 }
